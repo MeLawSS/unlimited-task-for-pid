@@ -5,7 +5,9 @@ userland task_for_pid and sysctl have similar implementation:__asm { syscall; Lo
 so I have an idea of simulate a task_for_pid throught sysctl
 
 kernel task_for_pid implementation:
+
 https://github.com/apple-oss-distributions/xnu/blob/94d3b452840153a99b38a3a9659680b2a006908e/bsd/vm/vm_unix.c#L940
+
 I simply delete all extra security check and audit code and move the rest into my syctl handler.
 
 
@@ -22,6 +24,7 @@ but I believe there's a way to resolve private kernel symbol in x64 system.
 
 
 injector code originates from here↓
+
 https://knight.sc/malware/2019/03/15/code-injection-on-macos.html
 https://gist.github.com/knightsc/45edfc4903a9d2fa9f5905f60b02ce5a
 
